@@ -4,12 +4,12 @@ const expect = require('chai').expect;
 
 describe('webdriver.io page', () => {
 
-    // it('should have the page title', () => {
-    //     browser.url('https://webdriver.io');
-    //     const title = browser.getTitle();
-    //     assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js');
-    //     // browser.pause(3000);
-    // });
+    it('should have the page title', () => {
+        browser.url('https://webdriver.io');
+        const title = browser.getTitle();
+        assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js');
+        // browser.pause(3000);
+    });
 
     // it('should return the titles of the hyperlinks on the upper navbar screen', () => {
     //     const screentitles = $$('.fixedHeaderContainer > div > header > div > .slidingNav > ul > li');
