@@ -36,25 +36,20 @@ describe(' Running a series of tests on the Webdriver.io home page', () => {
         console.log("search term inserted");
         console.log('the value below tells if the term was input and the results bar was displayed ')
         console.log(page.basePageClass.displayBar.isDisplayed());// displays the "truth-y" value if the results popup bar is visible
-        browser.pause(2000);
+        browser.pause(2000);// browser pause pauses the page
     });
 
     it('should navigate the hyperlinks referenced in the navigation bar', () => {
-
         const checkedTitles = [' ', 'Getting Started · WebdriverIO', 'API Docs · WebdriverIO', 'WebdriverIO · Next-gen WebDriver test framework for Node.js', 'Blog · WebdriverIO', ' ', 'GitHub - webdriverio/webdriverio: Next-gen WebDriver test automation framework for Node.js']
-
         for (let index = 1; index <= 6; index++) {
-
             if (index == 5) {// skips the searchbar at index 5
-
                 assert.equal(index, 5)
                 index += 1
-
                 const hyperlink = $(`.slidingNav > ul > li:nth-of-type(${index}) > a`);
                 hyperlink.click();
-                let title = browser.getTitle();
+                let title = browser.getTitle(); // assigning the title on the current page to title
                 browser.pause(2000);
-                assert.equal(title, checkedTitles[index], 'checking the title on the current page');
+                assert.equal(title, checkedTitles[index], 'checking the title on the current page');// chedking to see if the current title is matching the title that we ahve stored in out array
                 console.log(title);git 
             } else {
                 const hyperlink = $(`.slidingNav > ul > li:nth-of-type(${index}) > a`);
