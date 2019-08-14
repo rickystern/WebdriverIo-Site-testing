@@ -1,4 +1,3 @@
-
 const assert = require('assert');
 const page = require("../pageObjects/HomePageObject");
 
@@ -19,16 +18,16 @@ describe(' Running a series of tests on the Webdriver.io home page', () => {
     it('should return the titles of the hyperlinks on the upper navbar screen', () => {
         const Titles = ['Guide', 'API', 'Help', 'Blog', 'GitHub']// array stores the name test on the links
         for (let i = 0; i < 5; i++) {
-            assert.equal(page.basePageClass.navbarTitles[i].getText(), Titles[i], 'both strings must be equal for the test to pass');
-            console.log(page.basePageClass.navbarTitles[i].getText()); // outputs: "API"
+            assert.equal(page.basePageClass.headerItems[i].getText(), Titles[i], 'both strings must be equal for the test to pass');
+            console.log(page.basePageClass.headerItems[i].getText()); // outputs: "API"
         }
     });
 
     it('should check for and log the hyperlinks present in the upper navigation bar', () => {
         const hyperlinks = ['https://webdriver.io/docs/gettingstarted.html', 'https://webdriver.io/docs/api.html', 'https://webdriver.io/help.html', 'https://webdriver.io/blog/', 'https://github.com/webdriverio/webdriverio'];
         for (let i = 0; i < 5; i++) {
-            assert.equal(page.basePageClass.navbarTitles[i].getAttribute("href"), hyperlinks[i], 'tests to see if the hyperlinks are the same')
-            console.log(page.basePageClass.navbarTitles[i].getAttribute("href"));// outputs: "API Hyperlinks"
+            assert.equal(page.basePageClass.headerItems[i].getAttribute("href"), hyperlinks[i], 'tests to see if the hyperlinks are the same')
+            console.log(page.basePageClass.headerItems[i].getAttribute("href"));// outputs: "API Hyperlinks"
         }
     });
 
@@ -46,7 +45,7 @@ describe(' Running a series of tests on the Webdriver.io home page', () => {
 
         for (let index = 1; index <= 6; index++) {
 
-            if (index == 5) {// skips 
+            if (index == 5) {// skips the searchbar at index 5
 
                 assert.equal(index, 5)
                 index += 1
