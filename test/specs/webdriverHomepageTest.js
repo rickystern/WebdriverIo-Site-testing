@@ -46,17 +46,17 @@ describe(' Running a series of tests on the Webdriver.io home page', () => {
 
         for (let index = 1; index <= 6; index++) {
 
-            if (index == 5) {
+            if (index == 5) {// skips 
 
                 assert.equal(index, 5)
                 index += 1
+
                 const hyperlink = $(`.slidingNav > ul > li:nth-of-type(${index}) > a`);
                 hyperlink.click();
                 let title = browser.getTitle();
                 browser.pause(2000);
                 assert.equal(title, checkedTitles[index], 'checking the title on the current page');
-                console.log(title);
-
+                console.log(title);git 
             } else {
                 const hyperlink = $(`.slidingNav > ul > li:nth-of-type(${index}) > a`);
                 hyperlink.click();
