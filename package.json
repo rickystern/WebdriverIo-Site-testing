@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js --spec ./test/specs/basic.js",
-    "test1": "./basic.js"
+    "test": "wdio wdio.conf.js --spec ./test/specs/webdriverHomepageTest.js",
+    "test1": "wdio wdio.conf.js --spec ./test/specs/test.spec.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@wdio/appium-service": "^5.11.4",
     "@wdio/cli": "^5.11.6",
     "@wdio/dot-reporter": "^5.11.0",
     "@wdio/local-runner": "^5.11.6",
